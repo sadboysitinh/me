@@ -151,7 +151,7 @@ hr {
     padding: 0;
     height: 20px;
     overflow: hidden;
-    background: var(--theme-color);
+    background: #ddd;
     border-radius: 6px;
 }
 
