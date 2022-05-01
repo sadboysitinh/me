@@ -8,11 +8,6 @@
     <title>NGUYEN NGOC MINH</title>
     <link rel="stylesheet" href="main.css">
     <script src="icons.js"></script>
-    <script>
-        function scrollPage(height) {
-            window.scrollTo(0, height);
-        }
-    </script>
 </head>
 
 <body>
@@ -146,10 +141,10 @@
         <div style="height: 100px;"></div>
         <div class="footer">
             <div class="task-bar">
-                <a title="Sơ yếu lý lịch" onclick="scrollPage(0);"><i class="fa-solid fa-house-user"></i></a>
-                <a title="Skills" onclick="scrollPage(300);"><i class="fa-solid fa-graduation-cap"></i></a>
-                <a title="Contacts" onclick="scrollPage(600);"><i class="fa-solid fa-square-phone-flip"></i></a>
-                <a title="Payments Methods" onclick="scrollPage(900);"><i class="fa-solid fa-money-check"></i></a>
+                <a title="Sơ yếu lý lịch" onclick="scrollPage(0, 0);"><i class="fa-solid fa-house-user"></i></a>
+                <a title="Skills" onclick="scrollPage(300, 1);"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a title="Contacts" onclick="scrollPage(600, 2);"><i class="fa-solid fa-square-phone-flip"></i></a>
+                <a title="Payments Methods" onclick="scrollPage(900, 3);"><i class="fa-solid fa-money-check"></i></a>
                 <label id="mode" class="switch"><input type="checkbox" />
                     <div></div>
                 </label>
@@ -166,6 +161,17 @@
             BG.style.setProperty('--theme-color', color);
             BG.style.setProperty('--task-link', color);
         })
+
+        var cards = document.querySelectorAll(".card-items");
+        function scrollPage(height, items) {
+            window.scrollTo(0, height);
+            cards[items].style.background = "var(--theme-color)";
+            cards[items].style.color = "white";
+            setTimeout(function () {
+                cards[items].style.background = "white";
+                cards[items].style.color = "var(--theme-text)";
+            }, 500);
+        }
     </script>
 </body>
 

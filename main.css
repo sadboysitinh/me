@@ -177,7 +177,7 @@ hr {
 
 .contactsLink {
     font-weight: bold;
-    color: black;
+    color: var(--theme-color);
     display: inline-block;
     margin: 6px 0;
     text-decoration: none;
